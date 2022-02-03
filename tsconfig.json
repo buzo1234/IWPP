@@ -15,6 +15,20 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "firebase.ts",
+    "pages/register.tsx",
+    "pages/patientregister.tsx",
+    "pages/index.tsx",
+    "pages/clinicregister.tsx",
+    "pages/_app.tsx",
+    "pages/components/Login.tsx",
+    "pages/components/Header.tsx",
+    "pages/components/Footer.tsx",
+    "pages/api/hello.js"
+  ],
   "exclude": ["node_modules"]
 }

@@ -1,82 +1,63 @@
 import Head from 'next/head'
+import Image from 'next/image'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Login from './components/Login'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Header />
+      <div className="grid grid-cols-2 justify-center">
+        <div
+          className="col-span-2 flex justify-center lg:col-span-1 "
+          style={{ backgroundColor: '#a6e7ff' }}
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="ml-2 h-4" />
-        </a>
-      </footer>
+          <div className=" flex w-full flex-col items-center rounded-md p-5 shadow-md">
+            <p className="m-6 p-5 text-center font-sans text-4xl font-bold">
+              Log In
+            </p>
+
+            <input
+              type="text"
+              placeholder="Enter Contact Number"
+              className="my-3 w-4/5 rounded-lg border-2 border-black px-3  py-2"
+            />
+            <input
+              type="password"
+              placeholder="Enter Password"
+              className="my-3 w-4/5 rounded-lg border-2 border-black px-3 py-2"
+            />
+
+            <button className=" mb-10 mt-10 w-2/5 rounded-full bg-black px-6 py-2 text-white">
+              Login
+            </button>
+
+            <p className="text-md">
+              Don't have an account?
+              <Link href="/register">
+                <span className="cursor-pointer px-3 font-bold text-red-600 underline">
+                  Register Now
+                </span>
+              </Link>
+            </p>
+          </div>
+        </div>
+        <div className="mx-auto hidden flex-col items-center lg:col-span-1 lg:block">
+          <Image
+            src="/doctor.jfif"
+            width={500}
+            height={500}
+            objectFit="contain"
+          />
+        </div>
+      </div>
+      <Footer />
     </div>
   )
 }
